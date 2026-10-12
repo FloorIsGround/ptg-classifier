@@ -1,0 +1,60 @@
+# Study arm: 23 labels (the 21 clean labels + Communication + Service orientation).
+#
+# Shares ONE F25 superset index with config/study-21.yaml (identical
+# io.index_artifacts_dir + retrieval.run_prefix); only the active target labels
+# differ, so the arm effect is isolated.
+io:
+  data_dir: ./data
+  artifacts_dir: ./artifacts/study23
+  index_artifacts_dir: ./artifacts/f25_superset_index
+
+codebook:
+  path: ./config/codebooks/f25_extended_DRAFT.yaml
+  active_labels:
+    - Emotional awareness
+    - Accurate self-assessment
+    - Lack of self-awareness
+    - Self-confidence
+    - Lack of self-confidence
+    - Adaptability
+    - Lack of adaptability
+    - Negative emotional outburst
+    - Initiative
+    - Optimism
+    - Empathy
+    - Accurate team assessment
+    - Developing others
+    - Conflict management
+    - Building bonds
+    - Breaking bonds
+    - Questions to group
+    - Facilitate
+    - Suggestion / Change catalyst
+    - Directive
+    - Logistics
+    - Communication
+    - Service orientation
+
+# Semester is explicit (F25, S26, SP26, FA26). Only the build command selects F25;
+# S25 must never be passed as an index source.
+excel:
+  workbook: ./data/MM_Team_Meeting_1_Coded.xlsx
+  sheet_template: "Team {team} Time {meet} ({semester})"
+
+context:
+  prev_k: 2
+
+embedding:
+  model: ${EMBED_MODEL}
+
+retrieval:
+  top_k: 5
+  index_backend: faiss
+  run_prefix: f25_superset_
+
+llm:
+  api_base: ${LM_STUDIOS_HOST}
+  model: ${LM_MODEL}
+  binary_max_retries: 2
+  # Binary classification emits max_tokens=10; disable Qwen thinking.
+  reasoning_effort: "none"

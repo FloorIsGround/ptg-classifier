@@ -1,0 +1,261 @@
+version: shareable-synthetic-draft-v1
+source_notes:
+- DRAFT compatibility fixture only, not an evaluated research arm.
+- Definitions originated in Codebook for Content Analysis.pdf, which is deliberately
+  not distributed.
+- All core examples replaced with fictional illustrations.
+labels:
+- id: emotional_awareness
+  label: Emotional awareness
+  category: Self-Awareness
+  definition: Understanding of one's own attitudes or feelings.
+  aliases:
+  - Emotional Awareness
+  positive_examples:
+  - The fictional exercise leaves me feeling apprehensive.
+  negative_examples:
+  - text: The fictional teammate appears apprehensive.
+    reason: reading another's emotion; belongs to Empathy
+- id: accurate_self_assessment
+  label: Accurate self-assessment
+  category: Self-Awareness
+  definition: Understanding of one's own abilities.
+  aliases:
+  - Accurate Self-assessment
+  positive_examples:
+  - For this fictional workshop, I recognize that my spreadsheet skills need practice.
+  negative_examples:
+  - text: For this fictional workshop, the spreadsheet contains six columns.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: lack_of_self_awareness
+  label: Lack of self-awareness
+  category: Self-Awareness
+  definition: Lack of understanding of one's own attitudes, abilities, or of the situation.
+  aliases:
+  - Lack of Self-Awareness
+  - Lack of Self-awareness
+  positive_examples:
+  - In this fictional workshop, I had not realized that my interruptions prevented
+    discussion.
+  negative_examples:
+  - text: In this fictional workshop, I notice that I interrupted the discussion.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: self_confidence
+  label: Self-confidence
+  category: Self-Awareness
+  definition: Expression of trust in one's abilities or judgment.
+  aliases:
+  - Self-confidence
+  positive_examples:
+  - I am confident that I can present our fictional workshop proposal clearly.
+  negative_examples:
+  - text: The fictional workshop proposal contains four diagrams.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: lack_of_self_confidence
+  label: Lack of self-confidence
+  category: Self-Awareness
+  definition: Expression of the lack of one's abilities or judgment.
+  aliases:
+  - Lack of Self-confidence
+  positive_examples:
+  - I doubt that I can explain the fictional workshop proposal clearly.
+  negative_examples:
+  - text: The fictional workshop proposal requires a lengthy explanation.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: adaptability
+  label: Adaptability
+  category: Self-Regulation
+  definition: Being able to adjust to new conditions.
+  aliases: []
+  positive_examples:
+  - Since the fictional workshop venue changed, I will revise our presentation format.
+  negative_examples:
+  - text: The fictional workshop venue is the same as before.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: lack_of_adaptability
+  label: Lack of adaptability
+  category: Self-Regulation
+  definition: Unwillingness or inability to adjust to new conditions.
+  aliases:
+  - Lack of Adaptability
+  positive_examples:
+  - I refuse to change our fictional workshop format despite the venue restriction.
+  negative_examples:
+  - text: I will adjust our fictional workshop format to the new venue.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: negative_emotional_outburst
+  label: Negative emotional outburst
+  category: Self-Regulation
+  definition: Expression of frustration or exasperation.
+  aliases:
+  - Negative Emotional Outburst
+  positive_examples:
+  - This fictional exercise is unbearable, and I am furious with everyone here!
+  negative_examples:
+  - text: The fictional exercise schedule lists a discussion of anger.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: initiative
+  label: Initiative
+  category: Self-Motivation
+  definition: Speaker informs others of an act they initiated independently.
+  aliases: []
+  positive_examples:
+  - I will start drafting the agenda for our fictional workshop now.
+  negative_examples:
+  - text: The fictional workshop agenda was drafted yesterday.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: optimism
+  label: Optimism
+  category: Self-Motivation
+  definition: Hopefulness and confidence in the future or a successful outcome generally
+    to the team.
+  aliases: []
+  positive_examples:
+  - I expect our fictional workshop to go well even with the scheduling setback.
+  negative_examples:
+  - text: The fictional workshop has been moved to another room.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: empathy
+  label: Empathy
+  category: Social Awareness
+  definition: Expression of understanding of others' emotions.
+  aliases: []
+  positive_examples:
+  - You seem anxious about the fictional workshop, and I understand why you feel that
+    way.
+  negative_examples:
+  - text: I feel anxious about the fictional workshop.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: accurate_team_assessment
+  label: Accurate team assessment
+  category: Social Awareness
+  definition: Expression of understanding the team's abilities.
+  aliases:
+  - Accurate Team-assessment
+  - Accurate Team Assessment
+  positive_examples:
+  - Our fictional workshop team is skilled at design but needs more practice presenting.
+  negative_examples:
+  - text: The fictional workshop team consists of four people.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: developing_others
+  label: Developing others
+  category: Social Awareness
+  definition: Offering suggestion or assistance to another specific individual.
+  aliases:
+  - Developing Others
+  positive_examples:
+  - Let me coach you through rehearsing your part of the fictional workshop.
+  negative_examples:
+  - text: My part of the fictional workshop starts with a summary.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: conflict_management
+  label: Conflict management
+  category: Relational Management
+  definition: Expression of proactive and positive resolution of differences.
+  aliases:
+  - Conflict Management
+  positive_examples:
+  - We disagree about the fictional workshop format; let us compare both proposals
+    calmly.
+  negative_examples:
+  - text: The fictional workshop includes a session on conflict.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: building_bonds
+  label: Building bonds
+  category: Relational Management
+  definition: Expression that enhances relationship quality among the team members
+    through one on one, or directional communication.
+  aliases:
+  - Building Bonds
+  positive_examples:
+  - I appreciate your support, and I enjoy working with this fictional workshop team.
+  negative_examples:
+  - text: The fictional workshop roster lists all team members.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: breaking_bonds
+  label: Breaking bonds
+  category: Relational Management
+  definition: Expression (intentional or unintentional) that negatively disrupts the
+    relationship quality among team members.
+  aliases:
+  - Breaking Bonds
+  positive_examples:
+  - I no longer trust you, and I will not collaborate with you on this fictional workshop.
+  negative_examples:
+  - text: I will work with you on the fictional workshop rehearsal.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: questions_to_group
+  label: Questions to group
+  category: Communication
+  definition: Speaker elicits information from others.
+  aliases:
+  - Question to Group
+  positive_examples:
+  - What does everyone think about our fictional workshop outline?
+  negative_examples:
+  - text: The fictional workshop outline includes three exercises.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: facilitate
+  label: Facilitate
+  category: Communication
+  definition: Speaker prompts the team to advance the conversation (e.g., facilitating
+    the flow of the conversation).
+  aliases:
+  - Leadership
+  positive_examples:
+  - Let us hear from each person before deciding the fictional workshop outline.
+  negative_examples:
+  - text: The fictional workshop outline was decided last week.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: suggestion_change_catalyst
+  label: Suggestion / Change catalyst
+  category: Communication
+  definition: Speaker offers a new idea for the team.
+  aliases:
+  - Suggestion
+  - Suggestions
+  - Suggestion/Change catalyst
+  positive_examples:
+  - I suggest replacing the final activity in our fictional workshop with a discussion.
+  negative_examples:
+  - text: The final activity in the fictional workshop is a discussion.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: directive
+  label: Directive
+  category: Communication
+  definition: Speaker commands another individual or the whole group of an idea they
+    are to implement.
+  aliases: []
+  positive_examples:
+  - Please record our fictional workshop decisions in the shared notes now.
+  negative_examples:
+  - text: The fictional workshop decisions are already recorded.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: logistics
+  label: Logistics
+  category: Communication
+  definition: Speaker discusses expectations and information associated with the logistics
+    of the assignment (e.g., assignment expectations, due dates, page length, sections/sub-sections
+    of a paper or presentation).
+  aliases:
+  - Race mechanics
+  positive_examples:
+  - The fictional workshop rehearsal begins at noon in room seven.
+  negative_examples:
+  - text: I feel nervous about performing in the fictional workshop.
+    reason: Fictional boundary illustration only; not an approved research annotation.
+- id: communication
+  label: Communication
+  category: Communication
+  definition: ''
+  aliases: []
+  positive_examples: []
+  negative_examples: []
+- id: service_orientation
+  label: Service orientation
+  category: Social Awareness
+  definition: Offering assistance to the team as a whole
+  aliases: []
+  positive_examples: []
+  negative_examples: []

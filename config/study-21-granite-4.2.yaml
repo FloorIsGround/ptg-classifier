@@ -1,0 +1,61 @@
+# Granite 4.2 candidate arm. Shares the proven F25 retrieval index/embedding
+# with study-21.yaml, but never shares Qwen checkpoints or predictions.
+# Requires an approved local SSH tunnel to a private vLLM endpoint and the
+# matching local qwen3-embedding:4b Ollama model. Do not upload private data
+# or run inference on a rented host before obtaining explicit approval.
+io:
+  data_dir: ./data
+  artifacts_dir: ./artifacts/study21_granite42
+  index_artifacts_dir: ./artifacts/f25_core_index
+
+codebook:
+  path: ./config/codebooks/f25_codebook_2026_06_14.yaml
+  excluded_source_labels:
+    - Communication
+    - Service Orientation
+  active_labels:
+    - Emotional awareness
+    - Accurate self-assessment
+    - Lack of self-awareness
+    - Self-confidence
+    - Lack of self-confidence
+    - Adaptability
+    - Lack of adaptability
+    - Negative emotional outburst
+    - Initiative
+    - Optimism
+    - Empathy
+    - Accurate team assessment
+    - Developing others
+    - Conflict management
+    - Building bonds
+    - Breaking bonds
+    - Questions to group
+    - Facilitate
+    - Suggestion / Change catalyst
+    - Directive
+    - Logistics
+
+excel:
+  workbook: ./data/MM_Team_Meeting_1_Coded.xlsx
+  sheet_template: "Team {team} Time {meet} ({semester})"
+
+context:
+  prev_k: 2
+embedding:
+  model: ${EMBED_MODEL}
+retrieval:
+  top_k: 5
+  index_backend: faiss
+  run_prefix: f25_core_
+
+llm:
+  api_base: ${LM_STUDIOS_HOST}
+  model: granite-4.2-8b
+  binary_max_retries: 2
+  temperature: 1.0
+  top_p: 0.95
+  max_tokens: 64
+  seed: 42
+  chat_template_kwargs:
+    enable_thinking: false

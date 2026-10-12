@@ -1,0 +1,66 @@
+[
+  {
+    "defined_sheet_label_kappas": 42,
+    "input_and_prediction_hashes": {
+      "codebook_sha256": "74cfe2a50f5e67bf6a9b575ccdbe7a76a50ef2f40e798183d1e3e61bc1d70753",
+      "index_manifest_sha256": "165f5e3eb2e7620d3b55a47c1dd1af4730e0ea06365095d6ce2ae3e8243a87ed",
+      "raw_results_sha256": "e5a261f72aef311e3ad5cc2f2f8b2ec6aa13f79c5d5f2b477119f33320d45dc3",
+      "workbook_sha256": "dfe9e7a0906fb5a5720f80e76fcb1e6467cbda1460649ea2e9b98c847361c5a6"
+    },
+    "mean_sheet_label_kappa_valid_decisions": 0.16644715350152198,
+    "model": "qwen3.5:4b",
+    "run_date": "2026-09-24",
+    "scope": "S26/SP26 development only",
+    "source_evaluation_sha256": "9759ee20f5e46be6ce7484485fb0986ab0203267d8eb4835bd1a87de4d84bcde",
+    "summary": {
+      "abstained_negative": 0,
+      "abstained_positive": 0,
+      "excluded_only_coded_rows": 57,
+      "fn": 213,
+      "fp": 1385,
+      "jobs": 26376,
+      "macro_f1_supported_labels": 0.21309905957670155,
+      "micro_f1": 0.23977164605137963,
+      "micro_precision": 0.15394013439218082,
+      "micro_recall": 0.5419354838709678,
+      "prediction_coverage": 1.0,
+      "reviewed_blank_rows": 770,
+      "rows": 1256,
+      "supported_label_count": 19,
+      "tn": 24526,
+      "tp": 252
+    }
+  },
+  {
+    "defined_sheet_label_kappas": 42,
+    "input_and_prediction_hashes": {
+      "codebook_sha256": "74cfe2a50f5e67bf6a9b575ccdbe7a76a50ef2f40e798183d1e3e61bc1d70753",
+      "index_manifest_sha256": "165f5e3eb2e7620d3b55a47c1dd1af4730e0ea06365095d6ce2ae3e8243a87ed",
+      "raw_results_sha256": "d8fc77ca5eff7b1e1eaedf89c0f3ea15cfa9d4225c3cac316cb53f11dcb4ac85",
+      "workbook_sha256": "dfe9e7a0906fb5a5720f80e76fcb1e6467cbda1460649ea2e9b98c847361c5a6"
+    },
+    "mean_sheet_label_kappa_valid_decisions": 0.23719640225295707,
+    "model": "granite-4.2-8b",
+    "run_date": "2026-09-24",
+    "scope": "S26/SP26 development only",
+    "source_evaluation_sha256": "a17cc848f6404af75b45cb4c0118a335d820176f52328100bcaba8dde7412e1c",
+    "summary": {
+      "abstained_negative": 1,
+      "abstained_positive": 0,
+      "excluded_only_coded_rows": 57,
+      "fn": 274,
+      "fp": 397,
+      "jobs": 26376,
+      "macro_f1_supported_labels": 0.3040178645680812,
+      "micro_f1": 0.3627730294396961,
+      "micro_precision": 0.32482993197278914,
+      "micro_recall": 0.410752688172043,
+      "prediction_coverage": 0.9999620867455262,
+      "reviewed_blank_rows": 770,
+      "rows": 1256,
+      "supported_label_count": 19,
+      "tn": 25513,
+      "tp": 191
+    }
+  }
+]

@@ -1,0 +1,62 @@
+# Shareable template defaults: fictional examples, not a historical study reproduction.
+# Study arm: 21 clean labels.
+#
+# Primary exploratory arm. Communication was removed from the approved codebook
+# due to spurious model positives. Explicitly exclude it and Service Orientation
+# from retrieval. The former 23-label superset remains archived separately.
+io:
+  data_dir: ./data
+  artifacts_dir: ./artifacts/study21_core
+  index_artifacts_dir: ./artifacts/f25_core_index
+
+codebook:
+  path: ./config/codebooks/f25_codebook_2026_06_14.yaml
+  excluded_source_labels:
+    - Communication
+    - Service Orientation
+  active_labels:
+    - Emotional awareness
+    - Accurate self-assessment
+    - Lack of self-awareness
+    - Self-confidence
+    - Lack of self-confidence
+    - Adaptability
+    - Lack of adaptability
+    - Negative emotional outburst
+    - Initiative
+    - Optimism
+    - Empathy
+    - Accurate team assessment
+    - Developing others
+    - Conflict management
+    - Building bonds
+    - Breaking bonds
+    - Questions to group
+    - Facilitate
+    - Suggestion / Change catalyst
+    - Directive
+    - Logistics
+
+# Semester is explicit (F25, S26, SP26, FA26). Only the build command selects F25;
+# S25 must never be passed as an index source.
+excel:
+  workbook: ./data/MM_Team_Meeting_1_Coded.xlsx
+  sheet_template: "Team {team} Time {meet} ({semester})"
+
+context:
+  prev_k: 2
+
+embedding:
+  model: ${EMBED_MODEL}
+
+retrieval:
+  top_k: 5
+  index_backend: faiss
+  run_prefix: f25_core_
+
+llm:
+  api_base: ${LM_STUDIOS_HOST}
+  model: ${LM_MODEL}
+  binary_max_retries: 2
+  # Binary classification emits max_tokens=10; disable Qwen thinking.
+  reasoning_effort: "none"

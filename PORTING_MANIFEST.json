@@ -1,0 +1,149 @@
+{
+  "export_method": "tracked-file allowlist, new repository, no old .git copied",
+  "initial_transformed_files": {
+    "tests/test_binary_prompt.py": "Replace transcript-derived test examples with fictional examples; mark template version.",
+    "tests/test_codebook.py": "Replace transcript-derived test examples with fictional examples; mark template version."
+  },
+  "limitations": [
+    "Codebook and portability changes prevent exact historical checkpoint replay in this snapshot.",
+    "Authorized historical reproduction requires frozen private inputs and original source commit."
+  ],
+  "modified_exported_files": {
+    "config/default.yaml": {
+      "current_sha256": "fe2f71879da4f1f8c99fe31f33859fa52bcbdaf45401dfbcff39b838b5234944",
+      "source_sha256": "ba52522c3089b36d8f56303912bc2ef146676c553462c4040cd3d79ac6c5c2bd"
+    },
+    "config/latest-local.yaml": {
+      "current_sha256": "fe2f71879da4f1f8c99fe31f33859fa52bcbdaf45401dfbcff39b838b5234944",
+      "source_sha256": "a6d1cae83fd308ea9541ec29dba13190a022e12a60c5378a5d82c3eefac12f44"
+    },
+    "notebooks/colab_runner.ipynb": {
+      "current_sha256": "c92d42a2cb98971796dbf0240b6491740228d4afb5a7cc14619b0ee70e246f49",
+      "source_sha256": "feb597f7676bbb5145fda7184ffaa36bd42a73cb4e4ea6cd2d855784d27e6f04"
+    },
+    "pyproject.toml": {
+      "current_sha256": "df1edda93933da7149a93d66c30adc0b9716eb43750d86cbdc3abbcb91f4d2d7",
+      "source_sha256": "b04f0e761d3bde8a75805acbffabb02f27877512bf920db97a064272a49c78ee"
+    },
+    "scripts/controlled_experiments.py": {
+      "current_sha256": "3be45ed1285760961f679d8a34b32c1f14c24933d6d759828d38a5a15e085b63",
+      "source_sha256": "a675226c19ca33913e903e2fca0ab88e52aad7e23e0d5b5af5c80a4e4ac34fd9"
+    },
+    "scripts/vast_lease.py": {
+      "current_sha256": "ebff013266dd4f433027080a73eae088f77fce26996fcfb4f97cfcea50892760",
+      "source_sha256": "b60376f5333090f7e0948b094a2dc6a33a42e8624bd1b31f747264f833020444"
+    },
+    "tests/test_binary_prompt.py": {
+      "current_sha256": "0a9ed751d207565bb8226e831872e313cb3865f43e5c19b44fd535f17eddcc67",
+      "source_sha256": "41bf1657256a29d48626b11620122d45dca9f779bd1e81262c06e4a395a6e9ec"
+    },
+    "tests/test_codebook.py": {
+      "current_sha256": "f9a7ba6339775eb12514f29810aba6f372e52b6cdb436a85d34ece158bc449aa",
+      "source_sha256": "6c69f761c5049844ddefa0366b60454a8ef9d047420e71dfc4700639fe1b5c12"
+    }
+  },
+  "omitted": [
+    "all original Git objects/history",
+    "all data and inference artifacts",
+    "original .env and credentials",
+    "original codebook examples",
+    "original PDFs and ad-hoc notebooks",
+    "host-specific service deployment files",
+    "outdated research documentation"
+  ],
+  "porting_notes": [
+    "Core src/ptg implementation is byte-identical to the recorded source commit.",
+    "All codebook examples and matching test literals were replaced with fictional text.",
+    "Controlled harness root/config selection and optional watchdog host/CLI routing are now explicit environment settings.",
+    "Default/latest config uses the current 21-label schema. Optional notebook is source staging only.",
+    "pyproject description and collaborator documentation were updated; dependency lock retained.",
+    "Fresh Git history only; original research checkouts and artifacts were not modified."
+  ],
+  "private_codebook_replaced": true,
+  "source_branch": "experiment/controlled-coding",
+  "source_commit": "4157dc63e6986a9f2f694adb460eb9c1a92ccd4c",
+  "source_file_sha256": {
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "config/default.yaml": "ba52522c3089b36d8f56303912bc2ef146676c553462c4040cd3d79ac6c5c2bd",
+    "config/latest-local.yaml": "a6d1cae83fd308ea9541ec29dba13190a022e12a60c5378a5d82c3eefac12f44",
+    "config/study-21-granite-4.2.yaml": "27fa3cbee409809d7cd6f3cf17cb275371bd9589534a685cf6db5562ba13f0fd",
+    "config/study-21.yaml": "e26aad5e67fee2b2356a1854f75cb0234e31aadcc2d17409899cc59f8b0162d8",
+    "config/study-23.yaml": "0e9cee54809d216bb244674c0eb5aa8461a9e978fb30ef2c21665c6213739c38",
+    "deploy/granite-vllm-start.sh": "b0b5049fee29d757b27364fa3fef8e35ce79e8f514616c28a23b2fb628718ce8",
+    "notebooks/colab_runner.ipynb": "feb597f7676bbb5145fda7184ffaa36bd42a73cb4e4ea6cd2d855784d27e6f04",
+    "pyproject.toml": "b04f0e761d3bde8a75805acbffabb02f27877512bf920db97a064272a49c78ee",
+    "scripts/audit_workbook.py": "0a4554d8d43557a0ae134635b5722326a9b1a6cf126ffcdda27fb7c8165401e7",
+    "scripts/controlled_experiments.py": "a675226c19ca33913e903e2fca0ab88e52aad7e23e0d5b5af5c80a4e4ac34fd9",
+    "scripts/create_colab_bundle.py": "77534c5336d98c714e94d0ac03b6f2b0723d7ea97fece2eff4a3b11200369d05",
+    "scripts/evaluate_reconciled.py": "dc904bae3f63bc7dbc16cf20dffeb8f23a3436591cd5fe5ed1bb8629ad84ca1c",
+    "scripts/pilot_diagnostics.py": "5a0fc97c1436f9b4e30028fb250636108179c740a38b192bdabea603774a859b",
+    "scripts/render_evaluation.py": "56684caa714bdb439ea0869a83666e8c67d8a254a3c08f9d9156f12e74d28dbd",
+    "scripts/retrieval_coverage_audit.py": "c8d7988e0efa26e0c8f4f55d3c9b09bf1536bdc2e99a35d15b47a5d83d621823",
+    "scripts/study_profile.py": "6ffd93705e2e08bde13cbe40a05ec56725ccfa5c2157396a4e547dee8da81d39",
+    "scripts/vast_granite_batch.py": "a80da4b233654d8708576e61475c412c0c7739bed54c84d50c7d7bef42b92e1d",
+    "scripts/vast_lease.py": "b60376f5333090f7e0948b094a2dc6a33a42e8624bd1b31f747264f833020444",
+    "src/ptg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/classify/binary_classifier.py": "9af1f17b120469e82686a1f68601d56db16bc6f47a2663efb3acdd584c5c367d",
+    "src/ptg/classify/codebook.py": "8e59078f3683f593570a415af4bb1fc5414b25e0845d4f300ef85adcc4aebbe9",
+    "src/ptg/classify/dspy_classifier.py": "c89de3788bb4c7ef0c24c7ec1080fd3b18c4a62a7481875f36205065c02c22f8",
+    "src/ptg/classify/enforce.py": "8ce8f037a3d5ad6360db27e0b79a2a27f6bdfa0ff2702e9cefa24b5db24e2435",
+    "src/ptg/classify/legacy_semantic.py": "919f5a13f5d4e0c08fef9b840f9cb6d74a0182a724edbce6ff2cae3cb512d8da",
+    "src/ptg/cli.py": "645c635d6109b9bcefa12ef5118b0532d4453ddfee65ea064d5a9dd633855db2",
+    "src/ptg/config.py": "667766de22c532df82098ce0633230b9a991aa06a3ef003ca6f9dcbf9e286586",
+    "src/ptg/domain/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/domain/errors.py": "a3d982146e858da6c2aa7384af8c7fa8157fd44aa2075e0b2c788cb4b4cfe891",
+    "src/ptg/domain/models.py": "f23d3a458f30a91b5d2a30f0b1a8e8df179c0c66c20258c89a5f5f832fb84496",
+    "src/ptg/export/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/export/aggregate.py": "7b81bafb2ea9963a3b2931b889d0119afc05c5b4358cb28383438223309119a9",
+    "src/ptg/export/excel.py": "d944aef0a3484a674a7f8a57256b83b16dd5aba8192ce9593a2039e4151b7fae",
+    "src/ptg/export/formats.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/index/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/index/build.py": "03fcd0934e26a3fcc906f872d80124742b53d4231608214f68976beca7949907",
+    "src/ptg/index/embed.py": "8f1e8b5819eee155ac0d52d198b252e6c8177131176e988c05fbdab1ef11945a",
+    "src/ptg/ingest/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/ingest/excel.py": "0619b743701c686d91cfa1ac2d4eed71b12d0411c5441837e2cc30c31f1f8212",
+    "src/ptg/ingest/normalize.py": "554a0dcaf3f0290b5b4047f7d9ef64ef8bb8ad8fc9c684df04b4faf6344a83f0",
+    "src/ptg/logging.py": "e3b7dc8ab31ce70be47eaa4e8ae147479e92eebad214b1887541445260a4a60b",
+    "src/ptg/pipeline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/pipeline/run.py": "92e07fb00988febf4e99c51ca1a3f8b89143bf6cb630b15c74b29572c3d287c8",
+    "src/ptg/retrieve/__init__.py": "c6494f54fa71faec1b91839634807b1cc80a2214678c40d53d26d324158a158d",
+    "src/ptg/retrieve/formatting.py": "ff582b89ca44a227115c0f22c543127414d40e679c26dba294844412b4b7e02b",
+    "src/ptg/retrieve/query.py": "db2b81f6327815220f18d74bee881daf5e61142925356ec2e57d13e7c79c5421",
+    "src/ptg/retrieve/rerank.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/storage/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/storage/checkpoints.py": "010b243dfe12463aa8c02e3263058560997e599b4c39792eecc6b870c8e653f6",
+    "src/ptg/storage/faiss_index.py": "747a79dc674e1f48ec03b2bec3f5e928ff81df0118f95c68375abd6a47257e6b",
+    "src/ptg/storage/files.py": "1f7d3b7aea0e8823deba0e523ebd645e873874e11e5d449c5d1f94080baa462b",
+    "src/ptg/storage/raw_results.py": "4e2526c17ae751ad63cd57b36cee09220c480fe7dff32de80e40a7e9cea51bc1",
+    "src/ptg/storage/sqlite_index.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/ptg/storage/vector_index.py": "c430ea6ff1f11ad875a6feb4fd18f76926c2aaf1c324dbaa6d99b6785d5389b5",
+    "src/ptg/util/codes.py": "4911a9d570688b5ed06928ef2c7a31309a56a22e36a81ea1b00f377cfc0a1f70",
+    "src/ptg/util/io.py": "e2b6776922720491fadff9168856ed8673dad2b1fd8000cb14a416194d946f4e",
+    "src/ptg/util/text.py": "3375f9c02fc1cd81ee1247a432f6661f633d143d219ee3e84fb701b9ef853489",
+    "src/ptg/util/timing.py": "0480232be6d7a2e7350f985b1560bf0bb939b372c8e92fc9b8f9eac33656a6d6",
+    "tests/test_aggregate.py": "58c1dc1b813150d6103d6e4fffb943571b3b39b462350e476c4ebf4f80fed899",
+    "tests/test_binary_ollama.py": "5cbc83c5f0572558924f30e1abf8490561561a63811465ee8c8b712c578c5ee0",
+    "tests/test_binary_prompt.py": "41bf1657256a29d48626b11620122d45dca9f779bd1e81262c06e4a395a6e9ec",
+    "tests/test_checkpoint_resume.py": "63ca0fceeb4190af64cda40096fb48ee1d4e7b007974e3bed2fe6450823da81d",
+    "tests/test_codebook.py": "6c69f761c5049844ddefa0366b60454a8ef9d047420e71dfc4700639fe1b5c12",
+    "tests/test_codes.py": "87a5c726da007ae8d5c51f5ad3cd684c7c83840b6b7bba5a01e813234b9fd416",
+    "tests/test_colab_bundle.py": "0c538eff2d9f0aaaf014d27ade4e4df2294bd5f813b9b1cbcb66cedfc9bb9f30",
+    "tests/test_config_variants.py": "95a1d147f2582da81fa6def39157f67c94a45467902d840155117602d6991e1b",
+    "tests/test_controlled_experiments.py": "b6bc8cc6032718cd51c45ab23b3ad2a1c731ffd5e7058717217b193d958ef64a",
+    "tests/test_controlled_experiments_safety.py": "abdff272dac70cee1504f3eb8f2e569800067977503e0ddf1d08107118720bd1",
+    "tests/test_enforce.py": "e2ddd45db59275afbc86ab38fb04536d1566dcc58af7d58293ca8b5aacb2b1a8",
+    "tests/test_evaluate_reconciled.py": "be301b944d5761da79b892d31c013f34a1d870584474df6ec5918cf1480e2c1a",
+    "tests/test_granite_config.py": "c6320808cb05879ab2540bdf57efab6809779b656f533a4d1bd3ca17bd60b4e2",
+    "tests/test_normalize.py": "da6b9a21bcb77529be0b931692646c40c5b9938c7d6848c7b0b6843fb2614cc2",
+    "tests/test_pilot_cli.py": "91ab8560bf0144c01996c7fb0cad58c7926e6278402c923b59f64a99776eafa0",
+    "tests/test_pilot_diagnostics.py": "9137bfbdd2850aa276e24d01bb0d6ae46cb701cf644bf74f935ad9de99b5952d",
+    "tests/test_pipeline_safety.py": "0b5ba588fe832a7f707e5a2e0dbe21f91e67a9d64dfa6e6d39c9edd0c506c837",
+    "tests/test_raw_write_atomic.py": "e7a54967ed93285379a4b6a2d703a6ff93bb7e288dab39a835941ddaf5254dc2",
+    "tests/test_render_evaluation.py": "4cf796fed9c469c0cb2573880067088d58ddc875990c6ae55632436a399ea8e4",
+    "tests/test_study_profile.py": "ab7add904c9e2db013002cdf8be42f0fc04c290a81acbff2ec43c07be3c63144",
+    "tests/test_vast_granite_batch.py": "993fdcb067399176ac1223930a82ae2832002d5975ac3cd7b5e2105720756b6d",
+    "tests/test_vast_lease.py": "621e3a423e376c5bf284ff140b47bfae5008e3bf08be2eebb5c01a3dfe796cc2",
+    "tests/test_workbook_audit.py": "3c283267474c9fa3418ca0692cf76d9a291b0a19e17242b9136b60229d90e09d",
+    "uv.lock": "1568f082734ffa4037aee1c8fb36fce56dc5fb1ba335e8983e7b5630f1eb940b"
+  }
+}

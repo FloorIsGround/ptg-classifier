@@ -1,0 +1,27 @@
+[project]
+name = "transcript-pipeline"
+version = "0.1.0"
+description = "Research pipeline for per-label binary coding of meeting transcripts"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dspy>=3.0.3",
+    "faiss-cpu>=1.12.0",
+    "ollama>=0.6.0",
+    "pandas[excel]>=2.3.3",
+    "pyarrow>=21.0.0",
+    "python-dotenv>=1.0.1",
+    "pyyaml>=6.0.2",
+    "tqdm>=4.67.1",
+    "pytest>=8.0.0",
+    "httpx>=0.28.0"
+]
+
+[project.scripts]
+ptg = "ptg.cli:main"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 100
