@@ -66,7 +66,7 @@ uv run --frozen ptg --config config/research.private.yaml export --semester SP26
 uv run --frozen python scripts/evaluate_reconciled.py --config config/research.private.yaml --sheets S26:1:1,SP26:2:1 --affirm-reviewed-blanks --out artifacts/new-development/evaluation.json
 ```
 
-Use `--affirm-reviewed-blanks` only after the researcher confirms the reconciled-sheet blank policy. This does not attest completeness of individual coder columns. The evaluator intentionally refuses FA26 and other unapproved sheets.
+The researcher has confirmed that a blank individual-coder cell means no category code. `--affirm-reviewed-blanks` acknowledges the established no-code policy for the two reconciled development sheets; blank-cell interpretation is not an outstanding prerequisite. The evaluator intentionally refuses FA26 and other unapproved sheets, whose final-evaluation annotations remain a separate dataset-level issue.
 
 For Granite use a private copy of `config/study-21-granite-4.2.yaml`, a separate output namespace and the recorded model-specific decoding. Do not merely switch a model name inside the Qwen configuration. The original BF16 vLLM run is not reproduced by substituting an unrelated quantized model.
 

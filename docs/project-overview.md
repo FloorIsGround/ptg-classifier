@@ -49,7 +49,7 @@ Inference is separate from export, so output formatting does not require another
 
 ## Data interface
 
-The required columns are `Speaker` and `Transcript`. Index construction and human-reference scoring also use `Reconciled Codes`. Timestamp columns are retained for export when present. Individual coder columns are not a substitute for a verified annotation-completeness record.
+The required columns are `Speaker` and `Transcript`. Index construction and human-reference scoring also use `Reconciled Codes`. Timestamp columns are retained for export when present. In individual coder columns, a blank cell means no category code and is a negative decision for each category in matched agreement analysis.
 
 The study sheet naming pattern is `Team {team} Time {meet} ({semester})`, with semester values such as `F25`, `S26`, `SP26` and `FA26`. Teams with the same numeric identifier in different sheets are not necessarily the same participant cohort.
 

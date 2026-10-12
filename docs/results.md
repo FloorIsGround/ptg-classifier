@@ -62,4 +62,4 @@ Different populations, retrieval settings, label counts and aggregation methods 
 - `PORTING_MANIFEST.json`: source commit, selected-file hashes and deliberate export omissions.
 - `docs/reproducibility.md`: installation, synthetic integration smoke and authorized research reproduction instructions.
 
-Human-human agreement and a matched statistical LLM-human comparison have **not** been established here. The existing individual-coder columns require confirmation of independent coding and completeness before they can be used for that comparison.
+Human-human agreement and a matched statistical LLM-human comparison have **not** been computed here. The existing individual-coder columns can be used for the matched comparison, with blank cells treated as no category code. Whether coding was independently produced before reconciliation is a separate methodological question.

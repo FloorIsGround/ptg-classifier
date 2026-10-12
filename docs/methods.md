@@ -52,9 +52,9 @@ Cohen's kappa measures chance-corrected binary agreement. The current descriptiv
 
 ## Human comparison still required
 
-LLM versus reconciled human codes is not human-human agreement. The workbook contains individual coder columns, but their nonempty counts are markedly unequal. A blank individual-coder cell may mean reviewed negative, unreviewed, partial coding or disagreement-only entry. Do not treat these blanks as negatives without confirmation.
+LLM versus reconciled human codes is not human-human agreement. In the existing individual-coder columns, a blank cell means no category code. For binary per-label comparison, it is a negative decision for every category; differing nonempty counts do not make blank cells ambiguous.
 
-Obtain coding-completeness masks and pre-reconciliation independently coded labels. Compare human-human and LLM-human agreement using the same rows, labels, exclusions and missing-data rules. Where possible, report the LLM against each individual coder and against reconciled codes. Reconciliation is not independent of its contributing coders, so coder-versus-reconciliation scores need that caveat.
+Compare human-human and LLM-human agreement using the existing coder columns on the same rows, labels and exclusions, including blank/no-category decisions. Establish whether the annotations were independently produced before reconciliation as a separate methodological question, not a blank-cell interpretation issue. Where possible, report the LLM against each individual coder and against reconciled codes. Reconciliation is not independent of its contributing coders, so coder-versus-reconciliation scores need that caveat.
 
 ## Statistical interpretation
 
