@@ -121,6 +121,11 @@ at the first overflow; output returns to chronological order. Blank positions
 still count toward distance. It changes input selection, not transformer
 attention or probability calibration. Context never contains the target or a
 future turn, and prompts explicitly restrict evidence attribution to the target.
+The current `no_retrieval` and `context_prev2` recipes have identical effective
+settings apart from their registered names; they are controls in separate
+comparisons, not distinct interventions. Real long-turn inputs can exceed the
+fixed-window byte budget and fail the entire preparation. Admit feasibility
+without silently dropping rows or truncating only one arm.
 
 Combining context and retrieval interventions, or changing models/packing,
 requires an explicit `--factorial` declaration during preparation. It is not a
