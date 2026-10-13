@@ -13,6 +13,8 @@ A research pipeline for assigning emotional-intelligence and team-interaction co
 - [Tests run and actual results](docs/results.md)
 - [Installation and reproduction](docs/reproducibility.md)
 - [Data privacy and sharing boundaries](docs/data-governance.md)
+- [Versioned classifier suite v2](docs/classifier-suite-v2.md)
+- [Development experiment queue and admission gates](docs/research-experiments.md)
 
 ## Quick start: no private data, no GPU, no network inference
 
@@ -66,6 +68,6 @@ results/        Aggregate-only metrics and per-label confusion counts
 
 ## Repository access
 
-[FloorIsGround/ptg-classifier](https://github.com/FloorIsGround/ptg-classifier) is a **private** repository. Participant transcripts, private reproduction inputs and original research history are not included.
+[FloorIsGround/ptg-classifier](https://github.com/FloorIsGround/ptg-classifier) is a **public** source repository. Participant transcripts, private reproduction inputs and original research history are not included.
 
-Before wider sharing or public release, review construct-definition redistribution permissions, aggregate disclosure and collaborator access. No redistribution license is asserted until the project owner/institution confirms it. See [data privacy and sharing boundaries](docs/data-governance.md).
+Public source access is not permission to redistribute study inputs or construct definitions. Review construct-definition redistribution permissions and aggregate disclosure separately. No redistribution license is asserted until the project owner/institution confirms it. See [data privacy and sharing boundaries](docs/data-governance.md).
