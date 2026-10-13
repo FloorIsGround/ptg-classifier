@@ -82,9 +82,13 @@ existing GPU services. Weight size alone is not a memory-fit measurement.
 2. Admit a pinned local engine, model artifact, tokenizer bound and template
    overhead. Probe actual request/response behavior on fictional inputs first.
 3. Replace the whole-JSON ledger with a scalable append-only or transactional
-   journal before full-development execution. Native execution is currently
-   capped at 512 jobs per panel. Do not bypass this gate or split a study into
-   convenient panels without an explicit matched design and aggregate analysis.
+   journal before full-development execution. Non-synthetic execution (currently
+   local Ollama) is capped at 512 jobs per panel. Keep a study-level register of
+   all preparations and panels, not just repetitions inside one directory. Do
+   not bypass the gate or split a study into convenient panels without an
+   explicit matched design and aggregate analysis. Before real inference,
+   harden response preservation when post-call identity checks fail and the
+   registry/first-ledger crash window; both remain audit/recovery limitations.
 4. Extend and independently verify scientific reporting. Current private
    analysis supplies confusion counts, coverage and agreements. Scientific
    comparison still needs precision/recall/F1, Cohen's kappa, meeting-specific
