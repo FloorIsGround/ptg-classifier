@@ -1,0 +1,326 @@
+[
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "rag_baseline",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "frozen_top_k_label_filter",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "no_retrieval",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "context_prev0",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 0,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "context_prev2",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "context_prev6",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 6,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "context_recency_decay_budget",
+    "backend": "ollama",
+    "model": "qwen3.5:4b",
+    "revision": "runtime-artifact-digest-required",
+    "packing": "single_label",
+    "context": {
+      "policy": "recency_decay_budget",
+      "predecessors": 12,
+      "budget_bytes": 1024,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 16,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "granite42_confirmation",
+    "backend": "granite_remote",
+    "model": "ibm-granite/granite-4.2-8b",
+    "revision": "f8de16cdcdbc6c779ca517604e050d82cc119e44",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "frozen_top_k_label_filter",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 1.0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 64,
+      "think": false,
+      "top_p": 0.95
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "d1_single_label",
+    "backend": "d1_native",
+    "model": "LiquidAI/d1-3B",
+    "revision": "051bcc464b01b9f92942b364d9586b0ef5912432",
+    "packing": "single_label",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 0,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  },
+  {
+    "schema": "classifier-suite/2.0",
+    "name": "d1_shared_state",
+    "backend": "d1_native",
+    "model": "LiquidAI/d1-3B",
+    "revision": "051bcc464b01b9f92942b364d9586b0ef5912432",
+    "packing": "shared_state",
+    "context": {
+      "policy": "fixed_predecessors",
+      "predecessors": 2,
+      "budget_bytes": 4096,
+      "decay": "1/2"
+    },
+    "retrieval": {
+      "policy": "none",
+      "top_k": 5
+    },
+    "decoding": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 0,
+      "think": false,
+      "top_p": 1.0
+    },
+    "retry": {
+      "max_attempts": 2,
+      "retry_on": [
+        "transport"
+      ]
+    },
+    "threshold": {
+      "value": "0.5",
+      "comparator": ">="
+    }
+  }
+]
