@@ -2,11 +2,13 @@
 
 ## Purpose and status
 
-This project studies whether an LLM can assist qualitative coding of team meeting transcripts under a researcher-supplied codebook. It currently uses 21 emotional-intelligence and relational-management labels. A turn can receive multiple labels or none.
+The goal is a practical assistant that helps people code team meeting transcripts in a manner consistent with recorded human coding under a researcher-supplied codebook. The current prototype uses 21 emotional-intelligence and relational-management labels. A turn can receive multiple labels or none.
 
-The implementation runs end to end and has completed development experiments. Scientific validation remains incomplete: current performance is low, the human-human baseline has not been verified on matched independently coded rows, and the proposed final evaluation data have no reconciled labels in the saved workbook.
+The implementation runs end to end, and existing development results include F1 and Cohen's kappa comparing model predictions with reconciled human codes. Coder/reviewer columns can encode agreement implicitly and are not dense independent label vectors. A human-human baseline requires original individual decisions or an explicitly documented reconstruction of accepted labels and objections. The results do not establish parity with human coders. Independent final evaluation has not been performed. FA26 remains reserved and has no reconciled labels in the saved workbook. See [results](results.md) for the current findings.
 
 ## Classification workflow
+
+This diagram describes the main snapshot's binary-classification pipeline. The later October packing and Granite experiments have their own execution paths and should not be assumed to reproduce this exact workflow.
 
 ```text
 Privately supplied workbook + approved codebook
@@ -49,7 +51,7 @@ Inference is separate from export, so output formatting does not require another
 
 ## Data interface
 
-The required columns are `Speaker` and `Transcript`. Index construction and human-reference scoring also use `Reconciled Codes`. Timestamp columns are retained for export when present. In individual coder columns, a blank cell means no category code and is a negative decision for each category in matched agreement analysis.
+The required columns are `Speaker` and `Transcript`. Index construction and human-reference scoring also use `Reconciled Codes`. Timestamp columns are retained for export when present. Under the approved development-sheet policy, a blank reconciled cell means no category code. A blank coder/reviewer entry can instead mean no objection or implicit agreement during reconciliation; it is not by itself a negative decision or evidence that a row was unreviewed.
 
 The study sheet naming pattern is `Team {team} Time {meet} ({semester})`, with semester values such as `F25`, `S26`, `SP26` and `FA26`. Teams with the same numeric identifier in different sheets are not necessarily the same participant cohort.
 
@@ -59,10 +61,13 @@ The snapshot derives from source commit `4157dc63e6986a9f2f694adb460eb9c1a92ccd4
 
 These changes are deliberate. A ported synthetic-codebook run must not be mislabeled as a reproduction of a frozen research run. The original research checkout and artifacts are preserved separately.
 
+The main snapshot preceding these documentation updates was last committed October 12, 2026. Five research branches published October 13 contain earlier protocol and synthetic-readiness descriptions. The October 14 experiments completed later in a private execution environment; those branch descriptions do not establish that the execution code or private artifacts are published in this snapshot.
+
 ## Known limits
 
 - The default loader expects the source-tree `config/codebooks/` directory. Run from a repository checkout; a standalone wheel without those configuration assets is not a verified distribution method.
 - The production pipeline checks source/index hashes and rejects directly indexed target sheets. That does not prove participant-level independence or eliminate semantic overlap.
+- The completed September Granite retrieval replay found exact normalized target-text matches in retrieved examples despite distinct source sheets. Index/target overlap in older April/June F25-target runs is not fully reconstructed.
 - The controlled harness has stronger runtime-identity/completion gates than the historical production path. Do not generalize its provenance guarantees to every old run.
 - Some failure/debug logs can include transcript fragments or raw responses. Treat all runtime logs as private, even though they are ignored by Git.
-- The current evaluator is deliberately restricted to two reconciled development sheets. A prospective final-test evaluator and human-human agreement workflow still need explicit protocol approval.
+- The current evaluator is deliberately restricted to two reconciled development sheets. An appropriate human-human baseline and prospective final-test evaluation remain to be established.

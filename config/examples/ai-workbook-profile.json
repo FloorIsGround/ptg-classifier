@@ -1,0 +1,11 @@
+{
+  "schema": "ai-workbook-profile/1",
+  "workbook": "./fictional-inputs/coded-meeting.xlsx",
+  "output": "./fictional-exports/coded-meeting-with-ai.xlsx",
+  "source": {
+    "kind": "granite-live",
+    "journal": "./fictional-study/live.sqlite3",
+    "arm": "rag_baseline",
+    "repeat": "r1"
+  }
+}

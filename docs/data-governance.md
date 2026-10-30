@@ -24,12 +24,25 @@ The original research history contains participant data. Never copy its `.git`, 
 ```bash
 uv run --frozen python scripts/check_repository.py
 # Optional local comparison against an authorized private workbook:
-uv run --frozen python scripts/check_repository.py --reference-workbook /absolute/path/to/private-workbook.xlsx
+uv run --frozen python scripts/check_repository.py --reference-workbook "$PTG_PRIVATE_WORKBOOK"
 ```
 
-The scanner checks tracked paths/file types, notebook outputs, credential patterns and historical private paths. The optional workbook comparison checks normalized long transcript strings in current tracked files. It emits paths/counts only. Historical blob content needs a separate audit; exact matching does not exclude paraphrases or every identifying detail.
+Set `PTG_PRIVATE_WORKBOOK` locally to the approved reference file. The scanner checks tracked paths/file types, notebook outputs, credential patterns and historical private paths. The optional workbook comparison checks normalized long transcript strings in current tracked files. It emits paths/counts only. Historical blob content needs a separate audit; exact matching does not exclude paraphrases or every identifying detail.
+
+Use `scripts/audit_git_history.py` to inspect blobs and commit messages reachable from local Git refs. Set `PTG_PRIVATE_CODEBOOK` locally to the approved reference codebook, then run:
+
+```bash
+uv run --frozen python scripts/audit_git_history.py \
+  --reference-workbook "$PTG_PRIVATE_WORKBOOK" \
+  --reference-codebook "$PTG_PRIVATE_CODEBOOK" \
+  --phrase-words 8
+```
+
+The history audit defaults to all local refs. To inspect a separate mirror, supply its local path with `--repository`; use `--ref` to select specific refs. A pass covers only the reachable objects and bounded checks performed: it does not certify arbitrary personal data, paraphrases, remote caches, forks, releases or other unscanned material. Treat reports as restricted because they can contain paths and identifiers.
 
 Generated demonstration artifacts remain ignored even when fictional. `results/` must contain only aggregate summaries, never row IDs, speaker names or example quotations.
+
+For new overlap and agreement findings, share aggregate counts only. Do not add transcript text, row identifiers, participant names or rare per-label cells.
 
 ## Runtime privacy
 
@@ -39,6 +52,6 @@ Some debug/error paths include snippets and raw responses. Treat logs as restric
 
 ## Sharing and reproduction
 
-Private repository access does not authorize public redistribution, collaborator access or new transcript processing. Confirm code ownership, construct-definition permissions, aggregate disclosure and licensing before wider sharing. No redistribution license is asserted here.
+The GitHub repository was confirmed public on October 29, 2026. Public access does not establish what redistribution or new transcript processing is authorized. Confirm code ownership, construct-definition permissions, aggregate disclosure and licensing before further sharing. No redistribution license is asserted here.
 
 Historical score reproduction requires the frozen private inputs and original source/runtime contract described in [reproduction](reproducibility.md). Supply those only through an approved private channel, not this repository.

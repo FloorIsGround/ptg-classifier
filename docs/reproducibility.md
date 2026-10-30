@@ -1,5 +1,11 @@
 # Installation and reproduction
 
+## Reading order
+
+1. Read the [development results](results.md) and [methods](methods.md) to understand which findings are measured and what remains unvalidated.
+2. Use the installation and synthetic demonstration below to exercise the shareable pipeline without participant data or network inference.
+3. For authorized research reproduction, review the private-input and model-boundary sections before choosing the original source and runtime. FA26 remains reserved from new inference.
+
 ## Three distinct kinds of reproducibility
 
 1. **Software demonstration:** a new clone runs tests and a synthetic integration demo without participant data or model downloads.
@@ -7,6 +13,8 @@
 3. **Fresh inference replication:** rebuild retrieval and rerun an explicitly frozen workflow on the same private inputs and actual model runtime. GPU/server nondeterminism can still change predictions despite a seed.
 
 A synthetic-template run is not any of the reported historical research runs. This repository cannot reproduce their numerical scores using only the distributed files.
+
+The main snapshot preceding these documentation updates was last committed October 12, 2026. Five research branches published October 13 contain earlier protocol and synthetic-readiness descriptions; the October 14 experiments were completed later in a private execution environment. The commands below describe the shareable main snapshot and are not a claimed recipe for those later runs. Reproducing them requires the actual execution source and runtime as well as the authorized private artifacts.
 
 ## Install and verify the shareable source
 
@@ -33,6 +41,8 @@ Obtain these through the research team's approved private channel, never GitHub:
 - Model/runtime details, original code version and any external-processing approval.
 
 The September 24 input hashes are in `results/development-summary.json`. The original source commits are recorded separately from this new repository history. Source-file hashes in `PORTING_MANIFEST.json` do not embed the omitted original Git objects.
+
+The September Granite overlap check replayed saved query vectors offline, without new inference. Reproducing that check requires the historical workbook, index and metadata, manifest, and saved query-vector caches tied to the recorded embedding model. The April/June F25-target index/target relationships remain unreconstructed.
 
 ## Configure a new approved study run
 
@@ -66,7 +76,7 @@ uv run --frozen ptg --config config/research.private.yaml export --semester SP26
 uv run --frozen python scripts/evaluate_reconciled.py --config config/research.private.yaml --sheets S26:1:1,SP26:2:1 --affirm-reviewed-blanks --out artifacts/new-development/evaluation.json
 ```
 
-The researcher has confirmed that a blank individual-coder cell means no category code. `--affirm-reviewed-blanks` acknowledges the established no-code policy for the two reconciled development sheets; blank-cell interpretation is not an outstanding prerequisite. The evaluator intentionally refuses FA26 and other unapproved sheets, whose final-evaluation annotations remain a separate dataset-level issue.
+`--affirm-reviewed-blanks` acknowledges the established no-code policy for blank reconciled cells on the two approved development sheets. It does not define blank coder/reviewer entries, which may represent no objection or implicit agreement during reconciliation. The evaluator intentionally refuses FA26 and other unapproved sheets, whose final-evaluation annotations remain a separate dataset-level issue.
 
 For Granite use a private copy of `config/study-21-granite-4.2.yaml`, a separate output namespace and the recorded model-specific decoding. Do not merely switch a model name inside the Qwen configuration. The original BF16 vLLM run is not reproduced by substituting an unrelated quantized model.
 

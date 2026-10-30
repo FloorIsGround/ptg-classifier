@@ -1,6 +1,6 @@
 # Meeting transcript coding pipeline
 
-A research pipeline for assigning emotional-intelligence and team-interaction codes to meeting transcript turns. Each nonempty turn is evaluated independently for each of 21 labels, using codebook definitions, examples, preceding turns and optional retrieved examples.
+This project aims to make a practical transcript-coding assistant that mimics recorded human coding of emotional intelligence and team interaction. The current research pipeline makes a binary decision for each of 21 labels on every nonempty turn, using codebook definitions, examples, preceding turns and optional retrieved examples.
 
 **This is a sanitized collaborator repository, not the original research archive.** It has fresh Git history. It includes implementation, synthetic tests, aggregate development results and documentation. No participant transcript workbook, retrieval index, prompt ledger or prediction workbook is distributed.
 
@@ -8,9 +8,10 @@ A research pipeline for assigning emotional-intelligence and team-interaction co
 
 ## Start here
 
-- [Project overview and implementation](docs/project-overview.md)
+- [Export saved results into a copied workbook with an AI column](docs/ai-workbook-export.md)
+- [Current development results and their limits](docs/results.md)
 - [Data split and evaluation methods](docs/methods.md)
-- [Tests run and actual results](docs/results.md)
+- [Project overview and implementation](docs/project-overview.md)
 - [Installation and reproduction](docs/reproducibility.md)
 - [Data privacy and sharing boundaries](docs/data-governance.md)
 
@@ -45,10 +46,13 @@ These commands with the **synthetic template codebook** create a new exploratory
 
 ## Current evidence
 
-- September 24, 2026: Qwen and Granite runs on 1,256 reconciled development turns, all 21 labels. Micro-F1: Qwen **0.2398**, Granite **0.3628**.
-- Granite's descriptive mean of 42 sheet-label Cohen's kappas: **0.2372**, against reconciled codes, excluding its one invalid decision for kappa only.
-- September 29: controlled local Qwen screen on 128 development turns. Removing dynamic retrieval improved micro-F1 from **0.2011** to **0.2615**.
-- These are development findings. They do not demonstrate human-level coding or independent final-test performance. Human-human agreement on confirmed independently coded rows remains to be established.
+- September 24, 2026: Qwen and Granite were scored against reconciled human codes on 1,256 development turns and all 21 labels. Micro-F1 was **0.2398** for Qwen and **0.3628** for Granite. Their mean sheet-label Cohen's kappas were **0.1664** and **0.2372**, respectively; Granite had one invalid negative decision, excluded from its kappa summary.
+- An offline replay of September Granite retrieval found normalized exact-text matches among the top five for **15 of 1,256** target turns. All were short; the overlap does not establish a cause for score differences.
+- September 29: a 128-turn Qwen screen improved micro-F1 from **0.2011** to **0.2615** when dynamic retrieval was removed. Static codebook examples remained. This is a small development finding, not Granite evidence.
+- October 14: a D1 packing and compute-path comparison produced micro-F1 **0.0821** for isolated single-label requests and **0.0848** for shared-state all-label packing. Three same-seed repeats had identical predictions within each arm.
+- October 14: one complete Granite development repeat yielded micro-F1 **0.1650** with dynamic retrieval and **0.1613** without it. The meeting results split and macro-F1 favored no retrieval, so the earlier Qwen result does not transfer automatically.
+
+These are development findings, not independent final-test performance or evidence of human-level coding. The reported model scores compare predictions with reconciled human codes. A human-human baseline requires original individual decisions or an explicitly documented reconstruction of accepted labels and objections. FA26 remains reserved from new inference; no independent final evaluation has been performed. See [results](docs/results.md) for experiment scope and limitations.
 
 ## Layout
 
@@ -66,6 +70,6 @@ results/        Aggregate-only metrics and per-label confusion counts
 
 ## Repository access
 
-[FloorIsGround/ptg-classifier](https://github.com/FloorIsGround/ptg-classifier) is a **private** repository. Participant transcripts, private reproduction inputs and original research history are not included.
+[FloorIsGround/ptg-classifier](https://github.com/FloorIsGround/ptg-classifier) was confirmed **public** on October 29, 2026. Participant transcripts, private reproduction inputs and original research history are not included.
 
-Before wider sharing or public release, review construct-definition redistribution permissions, aggregate disclosure and collaborator access. No redistribution license is asserted until the project owner/institution confirms it. See [data privacy and sharing boundaries](docs/data-governance.md).
+Public access does not establish which redistribution or new transcript processing is authorized. Review permissions and aggregate disclosure before further sharing. No redistribution license is asserted until the project owner or institution confirms it. See [data privacy and sharing boundaries](docs/data-governance.md).
