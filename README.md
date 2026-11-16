@@ -8,6 +8,7 @@ A research pipeline for assigning emotional-intelligence and team-interaction co
 
 ## Start here
 
+- [Maintainer quickstart, coding-agent walkthrough and inference setup](docs/maintainer/README.md)
 - [Project overview and implementation](docs/project-overview.md)
 - [Data split and evaluation methods](docs/methods.md)
 - [Tests run and actual results](docs/results.md)
